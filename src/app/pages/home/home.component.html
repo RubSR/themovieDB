@@ -1,0 +1,27 @@
+<header>
+  <div class="container-sm m-auto text-white  h-100 py-5">
+    <h1 class="text-center"> The Movie DB</h1>
+  </div>
+</header>
+<div class="container-sm m-auto text-white">
+  <h2 class="text-center"> Lista de peliculas por genero</h2>
+  <hr class="text-white">
+  <!-- Select con la lista de generos que me ofrece la api -->
+  <mat-form-field>
+    <mat-label>Seleccion pelicula</mat-label>
+    <mat-select (selectionChange)="cambiarGenero($event)" >
+      <mat-option *ngFor="let gen of generos" [value]="gen.id">
+        {{gen.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Pintar la lista de peliculas -->
+  <!-- Subcomponentes -->
+  <div class="row">
+    <app-pelicula-card *ngFor="let pel of peliculas" [pelicula]="pel" class="col-6">
+
+    </app-pelicula-card>
+  </div>
+
+</div>
