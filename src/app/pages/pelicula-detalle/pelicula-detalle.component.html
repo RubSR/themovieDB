@@ -1,0 +1,20 @@
+<div class="row m-auto container-sm mt-5" *ngIf="pelicula">
+
+  <div class="col-4 text-bg-dark">
+    <img [src]="'https://image.tmdb.org/t/p/original/'+ pelicula.poster_path" class="img-fluid">
+  </div>
+  <div class="card col-8 text-bg-dark">
+    <img [src]="'https://image.tmdb.org/t/p/original/'+ pelicula.backdrop_path" class="card-img-top">
+    <div class="card-body">
+      <h4 class="card-title">{{pelicula.title}}</h4>
+      <p class="card-text">{{pelicula.overview}}</p>
+    </div>
+    <ul class="list-group" *ngFor="let genero of pelicula.genres">
+      <li class="list-group-item list-group-item-dark">{{genero.name}}</li>
+    </ul>
+    <div class="card-body">
+      <a [href]="pelicula.homepage" class="card-link">Página oficial</a>
+    </div>
+
+  </div>
+</div>

@@ -18,10 +18,18 @@
 
   <!-- Pintar la lista de peliculas -->
   <!-- Subcomponentes -->
-  <div class="row">
-    <app-pelicula-card *ngFor="let pel of peliculas" [pelicula]="pel" class="col-6">
+  <button (click)="mostrar()" >Mostrar</button>
+  <div class="row" [hidden]="esconder" >
+    <app-pelicula-card *ngFor="let pel of peliculas" [pelicula]="pel" class="col-6" (clickDetalle)="navegarADetalle($event)">
 
     </app-pelicula-card>
   </div>
+  <mat-paginator #paginator [length]="resultadosTotal"
+                 (page)="paginaSiguiente($event)"
+                 [showFirstLastButtons]="true"
+                 [pageSize]="20"
+                 [pageSizeOptions]="[20]"
+                 aria-label="Select page">
+  </mat-paginator>
 
 </div>

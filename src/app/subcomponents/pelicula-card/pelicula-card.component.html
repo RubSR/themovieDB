@@ -3,7 +3,10 @@
     <div class="col-md-4">
       <img [src]="'https://image.tmdb.org/t/p/w400/'+pelicula.poster_path" class="rounded-start img-fluid">
       <div class="text-center mt-2">
-        <a class="btn btn-primary">Ver detalles</a>
+
+        <!-- Boton para abrir pàgina de detalles -->
+        <!-- Decirle al padre que abra la pagina detalle de la pelicula  que en el card-->
+        <a class="btn btn-primary" (click)="irADetalle()">Ver detalles</a>
       </div>
     </div>
     <div class="col-md-8">
